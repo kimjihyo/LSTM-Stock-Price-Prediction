@@ -55,7 +55,7 @@ look_foward = 50
 
 
 # Download stock prices from yahoo finance
-df = yf.Ticker('TSLA').history(interval='1m', period='1wk')
+df = yf.Ticker('AAPL').history(interval='1m', period='1wk')
 prices = df['Close'].values
 
 
@@ -75,12 +75,12 @@ train_y, test_y = split_into_train_and_test(y, 0.75)
 
 
 # Create and train a model
-model = create_model(look_back, look_foward)
-train_model(model, train_x, train_y, 1)
-model.save('tsla.h5')
+# model = create_model(look_back, look_foward)
+# train_model(model, train_x, train_y, 1)
+# model.save('tsla.h5')
 
 # Load a trained model.
-# model = load_model('tsla.h5')
+model = load_model('aapl.h5')
 
 # Make predictions using the model
 # The shape of input should be a 3D array
